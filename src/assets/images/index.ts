@@ -6,6 +6,7 @@ export {default as ru} from './ru.png'
 export {default as en} from './en.png'
 export {default as apple} from './apple.svg'
 export {default as google} from './google.svg'
+export {default as logo} from './logo.png'
 
 // Footer logos
 export {default as footerLogo} from './footerLogo.jpg'
