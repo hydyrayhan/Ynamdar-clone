@@ -14,8 +14,8 @@ function Popup({ children, open, setOpen, title, active, setActive, sendData }: 
         </button>
 
         <div className='flex justify-end'>
-          <button onClick={() => setActive("phone")} className={'bg-gray-200 py-1 px-3 border border-gray-300 rounded-l shadow-inner  ' + (active == "phone" && "text-blue-500 bg-white")}>Telefon</button>
-          <button onClick={() => setActive("email")} className={'bg-gray-200 py-1 px-3 border border-gray-300 rounded-r shadow-inner  ' + (active == "email" && "text-blue-500 bg-white")}>Email</button>
+          <button onClick={() => setActive && setActive("phone")} className={'bg-gray-200 py-1 px-3 border border-gray-300 rounded-l shadow-inner  ' + (active == "phone" && "text-blue-500 bg-white")}>Telefon</button>
+          <button onClick={() => setActive && setActive("email")} className={'bg-gray-200 py-1 px-3 border border-gray-300 rounded-r shadow-inner  ' + (active == "email" && "text-blue-500 bg-white")}>Email</button>
         </div>
 
         <div>{children}</div>

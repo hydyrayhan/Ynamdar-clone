@@ -44,7 +44,10 @@ function Navbar() {
               <Register />
             </>
             :
-            <Profile />
+            <>
+              <Profile />
+              <InfoPopup />
+            </>
         }
 
         <Stick />
@@ -61,7 +64,6 @@ function Navbar() {
         </Button>
       </div>
 
-      <InfoPopup />
     </div>
   )
 }

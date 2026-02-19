@@ -1,0 +1,6 @@
+
+
+Owrenmeli zatlar
+1. Breadcrumb
+2. Infoda username ustune label chykyar
+3. Infoda input address yazamyzda nabelli bir error gives

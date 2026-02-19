@@ -20,7 +20,6 @@ function Login() {
   const [dataForget, setDataForget] = useState("")
   const { mutate, isSuccess } = useLogin()
   const { token,user,setUser, setToken } = useUserStore(state => state)
-  console.log(user,token)
   const handleData = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { value, name } = e.target
     setData({ ...data, [name]: value })
@@ -57,14 +56,14 @@ function Login() {
         {
           active === "phone" ?
             <div className='my-5'>
-              <Input regex={/^(6[0-5]|71)\d{6}$/} key={1} name="phone" label="phone" type="number" defaultValue="+993" onChange={handleData} value={data.phone} />
+              <Input enterFunc={sendData} regex={/^(6[0-5]|71)\d{6}$/} key={1} name="phone" label="phone" type="number" defaultValue="+993" onChange={handleData} value={data.phone} />
             </div> :
             <div className='my-5'>
-              <Input key={2} name="email" label="email" type="email" onChange={handleData} value={data.email} />
+              <Input enterFunc={sendData} key={2} name="email" label="email" type="email" onChange={handleData} value={data.email} />
             </div>
         }
         <div className='mb-3'>
-          <Input name='password' label="password" type='password' onChange={handleData} value={data.password} />
+          <Input enterFunc={sendData} name='password' label="password" type='password' onChange={handleData} value={data.password} />
         </div>
 
         <div className='text-end'>

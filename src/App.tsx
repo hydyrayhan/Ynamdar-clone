@@ -20,8 +20,7 @@ function App() {
     <>
       <ThemeProvider defaultTheme="light" storageKey="vite-ui-theme">
         {
-          !isAdminRoute && <><Header /><Toaster position="bottom-right" reverseOrder={false}/>
-      <Header /></>
+          !isAdminRoute && <><Header /><Toaster position="bottom-right" reverseOrder={false}/></>
         }
         <Routes>
           <Route path="/" element={<Main />} />

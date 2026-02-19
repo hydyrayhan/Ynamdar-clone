@@ -26,7 +26,7 @@ function Profile() {
 
       <div className={"absolute top-12 bg-white py-1 border border-gray-300 px-2 rounded flex flex-col shadow transtion-all duration-200 " + (open ? "opacity-100 visible" : "opacity-0 invisible")}>
         <Link to={'/addresses'} className={"flex items-center p-2 rounded hover:bg-gray-200 "}>Salgylarym</Link>
-        <div onClick={()=>setOpenInfo(true)} className="border-y border-gray-200">
+        <div onClick={()=>(setOpenInfo(true),setOpen(false))} className="border-y border-gray-200">
           <button className={"flex items-center p-2 rounded hover:bg-gray-200 "}>Maglumatlarym</button>
         </div>
         <button onClick={Logout} className={"flex items-center p-2 rounded hover:bg-gray-200 "} >Çyk</button>

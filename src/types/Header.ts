@@ -23,6 +23,7 @@ export type InputProp = {
   defaultValue?:string;
   name:string;
   onChange:(e:any)=>void;
-  value:string;
+  value:string | undefined;
   regex?:RegExp;
+  enterFunc?:()=>void;
 }
