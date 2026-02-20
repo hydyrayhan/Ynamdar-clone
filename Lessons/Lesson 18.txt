@@ -1,5 +1,5 @@
 1. npm i json-server  => For using fake backend minimalny easy
-2. npx json-server --watch .\src\data\brand.json --port 5000  => start json file like db
+2. npx json-server --watch .\src\data\fakeBackend.json --port 5000  => start json file like db
 3. npm install @tanstack/react-query @tanstack/react-query-devtools
 4. step1-> UI asks for data from query;
    step2-> Query checks the cache;

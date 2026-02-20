@@ -81,7 +81,8 @@
           "id": "BR-1004",
           "image": "https://images.unsplash.com/photo-1505740420928-5e560c06d30e"
         }
-      ]
+      ],
+      "id": "31ee"
     },
     {
       "category": "Clothing",
@@ -102,7 +103,8 @@
           "id": "BR-2003",
           "image": "https://images.unsplash.com/photo-1519457431-758c442759e4"
         }
-      ]
+      ],
+      "id": "28b7"
     },
     {
       "category": "Home & Kitchen",
@@ -118,7 +120,8 @@
           "id": "BR-3002",
           "image": "https://images.unsplash.com/photo-1593618998160-e34014e67546"
         }
-      ]
+      ],
+      "id": "ae9b"
     },
     {
       "category": "Books",
@@ -134,12 +137,13 @@
           "id": "BR-4003",
           "image": "https://images.unsplash.com/photo-1497633762265-9d179a990aa6"
         }
-      ]
+      ],
+      "id": "67b7"
     }
   ],
   "products": [
     {
-      "id": 1001,
+      "id": "1001",
       "name": "Samsung Galaxy S23",
       "definition": "Latest Android smartphone with powerful performance",
       "price": 899,
@@ -151,7 +155,7 @@
       "categoryName": "Android Phones"
     },
     {
-      "id": 1091,
+      "id": "1091",
       "name": "Samsung Galaxy S23",
       "definition": "Latest Android smartphone with powerful performance",
       "price": 1000,
@@ -163,7 +167,7 @@
       "categoryName": "Android Phones"
     },
     {
-      "id": 1005,
+      "id": "1005",
       "name": "Samsung Galaxy A52",
       "definition": "Tast Latest Android smartphone with powerful performance",
       "price": 700,
@@ -175,7 +179,7 @@
       "categoryName": "Android Phones"
     },
     {
-      "id": 1006,
+      "id": "1006",
       "name": "Huawei mate xt 3",
       "definition": "Latest Android smartphone with powerful performance",
       "price": 1000,
@@ -187,7 +191,7 @@
       "categoryName": "Android Phones"
     },
     {
-      "id": 1007,
+      "id": "1007",
       "name": "Redmagic 11 pro+",
       "definition": "Tast Latest Android smartphone with powerful performance",
       "price": 20000,
@@ -199,7 +203,7 @@
       "categoryName": "Android Phones"
     },
     {
-      "id": 1008,
+      "id": "1008",
       "name": "One plus 15",
       "definition": "Tast Latest Android smartphone with powerful performance",
       "price": 200,
@@ -211,7 +215,7 @@
       "categoryName": "Android Phones"
     },
     {
-      "id": 1002,
+      "id": "1002",
       "name": "iPhone 15",
       "definition": "Apple flagship smartphone with A17 chip",
       "price": 1099,
@@ -223,7 +227,7 @@
       "categoryName": "iPhones"
     },
     {
-      "id": 1003,
+      "id": "1003",
       "name": "Gaming Laptop",
       "definition": "High performance laptop for gaming",
       "price": 1599,
@@ -235,7 +239,7 @@
       "categoryName": "Gaming Laptops"
     },
     {
-      "id": 1004,
+      "id": "1004",
       "name": "Wireless Headphones",
       "definition": "Noise cancelling wireless headphones",
       "price": 199,
@@ -247,7 +251,7 @@
       "categoryName": "Accessories"
     },
     {
-      "id": 2001,
+      "id": "2001",
       "name": "Men T-Shirt",
       "definition": "Cotton T-shirt for everyday wear",
       "price": 25,
@@ -259,7 +263,7 @@
       "categoryName": "T-Shirts"
     },
     {
-      "id": 2002,
+      "id": "2002",
       "name": "Women Dress",
       "definition": "Elegant summer dress",
       "price": 79,
@@ -271,7 +275,7 @@
       "categoryName": "Dresses"
     },
     {
-      "id": 2003,
+      "id": "2003",
       "name": "Kids Jeans",
       "definition": "Comfortable jeans for kids",
       "price": 35,
@@ -283,7 +287,7 @@
       "categoryName": "Kids"
     },
     {
-      "id": 2004,
+      "id": "2004",
       "name": "Men Jeans",
       "definition": "Slim fit denim jeans",
       "price": 60,
@@ -295,7 +299,7 @@
       "categoryName": "Jeans"
     },
     {
-      "id": 3001,
+      "id": "3001",
       "name": "Wooden Table",
       "definition": "Solid wood dining table",
       "price": 499,
@@ -307,7 +311,7 @@
       "categoryName": "Furniture"
     },
     {
-      "id": 3002,
+      "id": "3002",
       "name": "Kitchen Knife Set",
       "definition": "Professional stainless steel knives",
       "price": 129,
@@ -319,7 +323,7 @@
       "categoryName": "Knives"
     },
     {
-      "id": 3003,
+      "id": "3003",
       "name": "Non-stick Pan",
       "definition": "Durable non-stick cooking pan",
       "price": 59,
@@ -331,7 +335,7 @@
       "categoryName": "Pans"
     },
     {
-      "id": 3004,
+      "id": "3004",
       "name": "Chair",
       "definition": "Comfortable wooden chair",
       "price": 89,
@@ -343,7 +347,7 @@
       "categoryName": "Furniture"
     },
     {
-      "id": 4001,
+      "id": "4001",
       "name": "JavaScript Guide",
       "definition": "Complete guide to modern JavaScript",
       "price": 39,
@@ -355,7 +359,7 @@
       "categoryName": "JavaScript"
     },
     {
-      "id": 4002,
+      "id": "4002",
       "name": "Python for Beginners",
       "definition": "Learn Python from scratch",
       "price": 35,
@@ -367,7 +371,7 @@
       "categoryName": "Python"
     },
     {
-      "id": 4003,
+      "id": "4003",
       "name": "World History",
       "definition": "Overview of world history",
       "price": 45,
@@ -379,7 +383,7 @@
       "categoryName": "History"
     },
     {
-      "id": 4004,
+      "id": "4004",
       "name": "Clean Code",
       "definition": "Best practices for writing clean code",
       "price": 49,
@@ -395,10 +399,13 @@
     {
       "id": "715d",
       "phone": "64813333",
-      "fullname": "Kyyas",
+      "fullname": "Aymuhammet",
       "email": "",
       "password": "123123",
-      "passwordConfirm": "123123"
+      "passwordConfirm": "123123",
+      "address": "Nebitgaz elika",
+      "gender": "male",
+      "birthDate": "2000-08-23"
     },
     {
       "id": "1e88",
@@ -415,6 +422,32 @@
       "email": "Example@gmail.com",
       "password": "mmmmmmmm",
       "passwordConfirm": "mmmmmmmm"
+    }
+  ],
+  "addresses": [
+    {
+      "id": "c74d",
+      "address": "123123",
+      "fullname": "123123",
+      "phone": "1231321321231212",
+      "fullAddress": "123132",
+      "description": "123123"
+    },
+    {
+      "id": "611b",
+      "address": "123123123",
+      "fullname": "123123",
+      "phone": "1231321321231212",
+      "fullAddress": "123132",
+      "description": "123123"
+    },
+    {
+      "id": "4147",
+      "address": "Gurtly",
+      "fullname": "Aymuhammet",
+      "phone": "64813308",
+      "fullAddress": "Taze gurtly",
+      "description": "Taze gurtly 147-nji mekdep onundaki 125-nji domun ugol padezi 4nji etaz 56kw"
     }
   ]
 }

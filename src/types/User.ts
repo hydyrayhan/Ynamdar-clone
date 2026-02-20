@@ -7,6 +7,7 @@ export type UserDataT = {
 }
 
 export type UserLoginDataT = {
+  id?:string;
   phone:string;
   fullname?:string;
   address?:string | undefined;
@@ -16,4 +17,12 @@ export type UserLoginDataT = {
   email?:string;
   password?:string;
   token?:string;
+}
+
+export type AddressT = {
+    address: string;
+    fullname: string;
+    phone: string;
+    fullAddress: string;
+    description: string;
 }

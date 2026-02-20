@@ -7,6 +7,7 @@ import GoToTop from "./components/GoToTop"
 import Category from "./pages/Category"
 import NotFound from "./pages/NotFound"
 import Search from "./pages/Search"
+import Addresses from "./pages/Addresses"
 import AdminDashboard from "./pages/Admin/Dashboard"
 import { ThemeProvider } from "@/components/theme-provider"
 import { Toaster } from 'react-hot-toast';
@@ -28,6 +29,7 @@ function App() {
           <Route path="/brands" element={<Brands />} />
           <Route path="/search/:keyword" element={<Search />} />
           <Route path="/admin" element={<AdminDashboard />} />
+          <Route path="/addresses" element={<Addresses />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
         {

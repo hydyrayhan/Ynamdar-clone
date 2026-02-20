@@ -1,5 +1,5 @@
 import axios, { type AxiosResponse } from "axios"
-import type { UserDataT, UserLoginDataT } from "../types/User"
+import type { AddressT, UserDataT, UserLoginDataT } from "../types/User"
 
 export const register = async(data:UserDataT)=>{
   try {
@@ -29,6 +29,26 @@ export const login = async(data:UserLoginDataT)=>{
         throw new Error("Sizin achar sozuniz yalnysh")
       }
     }
+  } catch (error) {
+    throw new Error("Ýalňyşlyk bar");
+  }
+}
+
+
+export const updateUser = async(data:UserLoginDataT)=>{
+  try {
+    let res:AxiosResponse<UserLoginDataT[]> | undefined;
+    res = await axios.patch("http://localhost:5000/users/"+data.id,data)
+    return res;
+  } catch (error) {
+    throw new Error("Ýalňyşlyk bar");
+  }
+}
+
+export const addAddress = async(data:AddressT)=>{
+  try {
+    const res = await axios.post("http://localhost:5000/addresses",data)
+    return res;
   } catch (error) {
     throw new Error("Ýalňyşlyk bar");
   }

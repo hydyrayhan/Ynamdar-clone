@@ -4,7 +4,7 @@ import { BsEye, BsEyeSlash } from 'react-icons/bs'
 import { useTranslation } from 'react-i18next'
 
 function Input(props: InputProp) {
-  const [focus, setFocus] = useState(props.defaultValue ? true : false)
+  const [focus, setFocus] = useState(props.defaultValue || props.value || props.type==="date" ? true : false)
   const [validate, setValidate] = useState(true)
   const [visible, setVisible] = useState(false)
   const {t} = useTranslation()

@@ -8,10 +8,15 @@ import { BsForward, BsForwardFill, BsInfo } from 'react-icons/bs'
 import { Forward, ForwardIcon, Key, KeyIcon, KeySquareIcon, Share, Share2 } from 'lucide-react'
 import { type UserLoginDataT } from '@/types/User'
 import toast from 'react-hot-toast'
+import axios from 'axios'
+import { updateUser } from '@/api/user'
+import { useUpdateUser } from '@/queries/user'
 
 function InfoPopup() {
   const { setUser } = useUserStore(state => state)
+  const { mutate } = useUpdateUser()
   const [data, setData] = useState<UserLoginDataT>({
+    id: JSON.parse(localStorage.getItem("user")!).id,
     phone: JSON.parse(localStorage.getItem("user")!).phone,
     fullname: JSON.parse(localStorage.getItem("user")!).fullname,
     address: JSON.parse(localStorage.getItem("user") || "").address,
@@ -23,8 +28,10 @@ function InfoPopup() {
   const sendData = () => {
     if(!data.fullname){
       toast.error("Boshluklary dolduryn!!!")
+      return
     }
     setUser(data)
+    mutate(data)
     localStorage.setItem("user",JSON.stringify(data))
     setOpenInfo(false)
   }
