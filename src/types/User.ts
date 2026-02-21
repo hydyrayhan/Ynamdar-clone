@@ -20,6 +20,7 @@ export type UserLoginDataT = {
 }
 
 export type AddressT = {
+    id?:string;
     address: string;
     fullname: string;
     phone: string;

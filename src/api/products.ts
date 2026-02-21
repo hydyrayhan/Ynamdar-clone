@@ -1,4 +1,4 @@
-import axios from "axios";
+import { axiosInstance } from "./axiosInstance";
 import type { ProductCardProps } from "../types/Product";
 
 export const getAllProducts = async(id:string|undefined,order:string,brands:string[])=>{
@@ -8,7 +8,7 @@ export const getAllProducts = async(id:string|undefined,order:string,brands:stri
   }else if(order == 'desc'){
     newOrder = "price"
   }
-  const {data} = await axios.get<ProductCardProps[]>(`http://localhost:5000/products?categoryId=${id}&_sort=${newOrder}`)
+  const {data} = await axiosInstance.get<ProductCardProps[]>(`products?categoryId=${id}&_sort=${newOrder}`)
   return data
 }
 
@@ -19,7 +19,7 @@ export const getAllProductsByKeyword = async(keyword:string|undefined,order:stri
   }else if(order == 'desc'){
     newOrder = "price"
   }
-  const {data} = await axios.get<ProductCardProps[]>(`http://localhost:5000/products?name=${keyword}&_sort=${newOrder}`)
+  const {data} = await axiosInstance.get<ProductCardProps[]>(`products?name=${keyword}&_sort=${newOrder}`)
   return data
 }
 

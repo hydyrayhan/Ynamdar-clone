@@ -448,6 +448,152 @@
       "phone": "64813308",
       "fullAddress": "Taze gurtly",
       "description": "Taze gurtly 147-nji mekdep onundaki 125-nji domun ugol padezi 4nji etaz 56kw"
+    },
+    {
+      "id": "01c5",
+      "address": "Hello",
+      "fullname": "It is me",
+      "phone": "64813308",
+      "fullAddress": "I was ",
+      "description": "W0ndering about you"
+    },
+    {
+      "id": "6f44",
+      "address": "Poswoysky",
+      "fullname": "Hydyr",
+      "phone": "64813308",
+      "fullAddress": "jdkdflsd",
+      "description": "jfklaj;ljslfj jslaf ;j;lsaj f;lsdj fl;"
+    }
+  ],
+  "categories": [
+    {
+      "id": "1",
+      "name": "Electronics",
+      "icon": "MdDevices",
+      "subcategories": [
+        {
+          "id": 11,
+          "name": "Mobile Phones",
+          "subcategories": [
+            {
+              "id": 111,
+              "name": "Android Phones"
+            },
+            {
+              "id": 112,
+              "name": "iPhones"
+            }
+          ]
+        },
+        {
+          "id": 12,
+          "name": "Laptops",
+          "subcategories": [
+            {
+              "id": 121,
+              "name": "Gaming Laptops"
+            },
+            {
+              "id": 122,
+              "name": "Ultrabooks"
+            }
+          ]
+        },
+        {
+          "id": 13,
+          "name": "Accessories"
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "name": "Clothing",
+      "icon": "FaTshirt",
+      "subcategories": [
+        {
+          "id": 21,
+          "name": "Men",
+          "subcategories": [
+            {
+              "id": 211,
+              "name": "T-Shirts"
+            },
+            {
+              "id": 212,
+              "name": "Jeans"
+            }
+          ]
+        },
+        {
+          "id": 22,
+          "name": "Women",
+          "subcategories": [
+            {
+              "id": 221,
+              "name": "Dresses"
+            },
+            {
+              "id": 222,
+              "name": "Skirts"
+            }
+          ]
+        },
+        {
+          "id": 23,
+          "name": "Kids"
+        }
+      ]
+    },
+    {
+      "id": "3",
+      "name": "Home & Kitchen",
+      "icon": "MdKitchen",
+      "subcategories": [
+        {
+          "id": 31,
+          "name": "Furniture"
+        },
+        {
+          "id": 32,
+          "name": "Kitchen Tools",
+          "subcategories": [
+            {
+              "id": 321,
+              "name": "Pans"
+            },
+            {
+              "id": 322,
+              "name": "Knives"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "4",
+      "name": "Books",
+      "icon": "FaBook",
+      "subcategories": [
+        {
+          "id": 41,
+          "name": "Programming",
+          "subcategories": [
+            {
+              "id": 411,
+              "name": "JavaScript"
+            },
+            {
+              "id": 412,
+              "name": "Python"
+            }
+          ]
+        },
+        {
+          "id": 42,
+          "name": "History"
+        }
+      ]
     }
   ]
 }

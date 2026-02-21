@@ -1,4 +1,4 @@
-import axios from "axios";
+import { axiosInstance } from "./axiosInstance";
 
 
 export type brandType = {
@@ -14,10 +14,10 @@ export type categoryBrandType = {
 }
 
 export const getAllBrands = async(id?:string)=>{
-  const {data} = await axios.get<categoryBrandType[]>(`http://localhost:5000/brands?categoryId=${id||''}`)
+  const {data} = await axiosInstance.get<categoryBrandType[]>(`brands?categoryId=${id||''}`)
   return data
 }
 export const getAllBrandsByKeyword = async(keyword?:string)=>{
-  const {data} = await axios.get<brandType[]>(`http://localhost:5000/brandsByKeyword`) // ?keyword=keyword => hakyky backend catylanda sheyle ulanylyar
+  const {data} = await axiosInstance.get<brandType[]>(`brandsByKeyword`) // ?keyword=keyword => hakyky backend catylanda sheyle ulanylyar
   return data
 }

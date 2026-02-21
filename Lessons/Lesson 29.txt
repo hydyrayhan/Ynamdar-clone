@@ -1,0 +1,2 @@
+axiosInstance => Hemme yerde localhost:5000 yazyp son onam uytgetmeli bolsa kosenmers yaly ulanyas
+.env => programmamyzyn nastroykasyny yazyas. We gite yuklamizok her yerde uytgeshin nastroyka bar
