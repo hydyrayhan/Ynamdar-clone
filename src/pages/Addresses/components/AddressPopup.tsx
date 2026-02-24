@@ -1,12 +1,12 @@
-import { addAddress } from '@/api/user'
 import Input from '@/components/Header/Input'
 import PopupContainer from '@/components/PopupContainer'
-import { useAddAddress } from '@/queries/user'
+import { useAddAddress, useEditAddress } from '@/queries/user'
+import type { AddressT } from '@/types/User'
 import { useEffect, useState } from 'react'
 
 
 
-function AddressPopup({ open, setOpen }: { open: boolean, setOpen: (open: boolean) => void }) {
+function AddressPopup({ open, setOpen, defaultValue }: { open: boolean, setOpen: (open: boolean) => void ,defaultValue?:AddressT }) {
   const [data, setData] = useState({
     address: "",
     fullname: "",
@@ -14,11 +14,18 @@ function AddressPopup({ open, setOpen }: { open: boolean, setOpen: (open: boolea
     fullAddress: "",
     description: ""
   })
-
-  const { mutate, isSuccess } = useAddAddress()
+  
+  const add = useAddAddress()
+  const edit = useEditAddress()
+  
+  useEffect(()=>{
+    if(defaultValue){
+      setData(defaultValue)
+    }
+  },[defaultValue])
 
   useEffect(() => {
-    if (isSuccess) {
+    if (add.isSuccess,edit.isSuccess) {
       setData({
         address: "",
         fullname: "",
@@ -28,10 +35,14 @@ function AddressPopup({ open, setOpen }: { open: boolean, setOpen: (open: boolea
       })
       setOpen(false)
     }
-  }, [isSuccess])
+  }, [add.isSuccess,edit.isSuccess])
 
-  const sendData = async () => {
-    mutate(data)
+  const sendData = () => {
+    if(defaultValue){
+      edit.mutate(data)
+    }else{
+      add.mutate(data)
+    }
   }
 
 
@@ -44,8 +55,9 @@ function AddressPopup({ open, setOpen }: { open: boolean, setOpen: (open: boolea
         <Input label='Salgynyz*' type={'string'} value={data.fullAddress} name='fullAddress' onChange={(e) => setData({ ...data, [e.target.name]: e.target.value })} />
         <Input label='Salgynyz barada ginishleyin*' type={'string'} value={data.description} name='description' onChange={(e) => setData({ ...data, [e.target.name]: e.target.value })} />
         <button onClick={sendData} className='bg-custom-green text-white font-bold w-full hover:opacity-80 py-2 rounded'>
-          Gosh
-
+          {
+            defaultValue ? "Edit" : "Gosh"
+          }
         </button>
 
       </div>

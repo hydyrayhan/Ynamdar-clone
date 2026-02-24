@@ -7,4 +7,5 @@ export type ProductCardProps = {
   quantity:number;
   discount:number;
   isNew:boolean;
+  amount?:number;
 }

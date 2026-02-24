@@ -54,6 +54,23 @@ export const addAddress = async(data:AddressT)=>{
     throw new Error("Ýalňyşlyk bar");
   }
 }
+export const editAddress = async(data:AddressT)=>{
+  try {
+    const res = await axiosInstance.patch(`addresses/${data.id}`,data)
+    return res;
+  } catch (error) {
+    throw new Error("Ýalňyşlyk bar");
+  }
+}
+export const deleteAddress = async(id:string)=>{
+  try {
+    const res = await axiosInstance.delete(`addresses/${id}`)
+    return res;
+  } catch (error) {
+    throw new Error("Ýalňyşlyk bar");
+  }
+}
+
 export const getAllAddress = async()=>{
   try {
     const res = await axiosInstance.get("addresses")

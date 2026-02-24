@@ -15,6 +15,7 @@ import Register from './Register';
 import { useUserStore } from '../../store/user';
 import Profile from './Profile';
 import InfoPopup from './InfoPopup';
+import { useCartStore } from '@/store/cart';
 
 function Navbar() {
   const navigate = useNavigate();
@@ -22,6 +23,8 @@ function Navbar() {
   const { t } = useTranslation()
   const [open, setOpen] = useState<boolean>(false)
   const { user, token } = useUserStore(state => state)
+  const {cart} = useCartStore(state=>state)
+
   return (
     <div className='bg-white py-2 text-custom-blue h-15 shadow-lg sticky top-0 z-10'>
       <div onClick={() => setOpen(false)} className={"absolute top-15 left-0 w-full h-[calc(100vh-118px)] backdrop-blur-[2px] " + (open ? "scale-100" : "scale-0")}></div>
@@ -59,9 +62,14 @@ function Navbar() {
           <IoMdHeartEmpty size={20} className='text-custom-blue font-bold' />
         </Button>
         <Stick />
-        <Button action={() => navigate('cart')} active={pathname === "/cart"}>
-          <BsCart2 size={20} className='text-custom-blue font-bold' />
-        </Button>
+        <div className='relative'>
+          <Button action={() => navigate('cart')} active={pathname === "/cart"}>
+            <BsCart2 size={20} className='text-custom-blue font-bold' />
+          </Button>
+          {
+            cart.length>0 && <span className='absolute -bottom-1 right-0 bg-custom-orange text-white w-5 h-5 rounded-full flex items-center justify-center text-xs'>{cart.length}</span>
+          }
+        </div>
       </div>
 
     </div>

@@ -1,13 +1,30 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { product2 } from '../assets/images'
 import { IoMdHeart, IoMdHeartEmpty } from 'react-icons/io'
 import { BsCart2 } from 'react-icons/bs'
 import { BiSolidLeftArrow, BiSolidRightArrow } from 'react-icons/bi'
 import type { ProductCardProps } from '../types/Product'
+import { useCartStore } from '@/store/cart'
 
 function ProductCard({ data }: { data: ProductCardProps }) {
   const [like, setLike] = useState(false)
   const [count, setCount] = useState(0)
+  const {addToCart,removeFromCart,updateToCart} = useCartStore(state=>state)
+
+  const remove = ()=>{
+    setCount(count - 1) 
+    updateToCart(data.id,count-1)
+    if(count===1) removeFromCart(data.id)
+  }
+
+  useEffect(()=>{
+    const carts = JSON.parse(localStorage.getItem("cart") || "")
+    for(let i = 0; i<carts.length; i++){
+      if(carts[i].id === data.id){
+        setCount(carts[i].amount)
+      }
+    }
+  },[])
 
   return (
     <div className={' bg-white rounded-md border p-5 flex flex-col justify-between ' + (count ? "border-custom-orange" : "border-gray-300")}>
@@ -45,11 +62,11 @@ function ProductCard({ data }: { data: ProductCardProps }) {
           {
             count ?
               <div className='w-full h-10 ml-3 text-white bg-custom-orange flex justify-between items-center rounded-md overflow-hidden'>
-                <button onClick={() => setCount(count - 1)} className='hover:bg-[#f39357] active:bg-[#ca4619] h-10 w-10 flex items-center justify-center bg-custom-orange'><BiSolidLeftArrow size={20} /></button>
+                <button onClick={remove} className='hover:bg-[#f39357] active:bg-[#ca4619] h-10 w-10 flex items-center justify-center bg-custom-orange'><BiSolidLeftArrow size={20} /></button>
                 <span className='font-bold'>{count} Sany</span>
-                <button onClick={() => setCount(count + 1)} className='hover:bg-[#f39357] active:bg-[#ca4619] h-10 w-10 flex items-center justify-center bg-custom-orange'><BiSolidRightArrow size={20} /></button>
+                <button onClick={() => (setCount(count + 1),updateToCart(data.id,count+1))} className='hover:bg-[#f39357] active:bg-[#ca4619] h-10 w-10 flex items-center justify-center bg-custom-orange'><BiSolidRightArrow size={20} /></button>
               </div> :
-              <button onClick={() => setCount(1)} className='w-full transition-all hover:opacity-75 h-10 ml-3 text-white bg-custom-orange flex justify-center items-center rounded-md'>
+              <button onClick={() => {setCount(1),addToCart(data)}} className='w-full transition-all hover:opacity-75 h-10 ml-3 text-white bg-custom-orange flex justify-center items-center rounded-md'>
                 <BsCart2 size={24} />
               </button>
           }

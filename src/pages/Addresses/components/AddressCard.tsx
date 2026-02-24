@@ -1,6 +1,10 @@
+import { useDeleteAddress } from '@/queries/user'
 import type { AddressT } from '@/types/User'
 
-function AddressCard({ data, index, active, setActive }: { data: AddressT, index: number, active: number, setActive: (active: number) => void }) {
+function AddressCard({ data, index, active, setActive, setOpenEdit }: { data: AddressT, index: number, active: number, setActive: (active: number) => void,setOpenEdit: () => void }) {
+
+  const {mutate} = useDeleteAddress()
+
   return (
     <div onClick={()=>setActive(index)} className={'border rounded p-3 cursor-pointer ' + (index == active && "border-custom-orange")}>
       <div className='flex items-center justify-between'>
@@ -23,8 +27,8 @@ function AddressCard({ data, index, active, setActive }: { data: AddressT, index
         </div>
       </div>
       <div className='flex justify-end items-center gap-2'>
-        <button className='bg-custom-orange rounded py-0.5 px-2 text-white text-sm hover:opacity-80'>Uytget</button>
-        <button className='bg-red-500 rounded py-0.5 px-2 text-white text-sm hover:opacity-80'>Poz</button>
+        <button onClick={setOpenEdit} className='bg-custom-orange rounded py-0.5 px-2 text-white text-sm hover:opacity-80'>Uytget</button>
+        <button onClick={()=>mutate(data.id!)} className='bg-red-500 rounded py-0.5 px-2 text-white text-sm hover:opacity-80'>Poz</button>
       </div>
     </div>
   )

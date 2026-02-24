@@ -8,7 +8,9 @@ import type { AddressT } from '@/types/User'
 
 function index() {
   const [open, setOpen] = useState(false)
-  const [active,setActive] = useState(0)
+  const [openEdit, setOpenEdit] = useState(false)
+  const [index,setIndex] = useState<null | number>(null)
+  const [active,setActive] = useState(Number(localStorage.getItem("address-active") || 0))
   const { data, isLoading } = useGetAllAddresses()
 
   useEffect(() => {
@@ -18,6 +20,11 @@ function index() {
       nProgress.done()
     }
   }, [isLoading])
+
+  const handleActive = (e:number)=>{
+    setActive(e)
+    localStorage.setItem("address-active",`${e}`)
+  }
 
   if (isLoading) { return <Loading /> }
 
@@ -34,12 +41,15 @@ function index() {
       <div className='bg-white rounded p-3 my-3 grid grid-cols-3 gap-2'>
         {
           data && data.map((address:AddressT,i:number)=>(
-            <AddressCard key={address.id} data={address} index={i} active={active} setActive={setActive}/>
+            <AddressCard key={address.id} data={address} setOpenEdit={()=>{setOpenEdit(true),setIndex(i)}} index={i} active={active} setActive={handleActive}/>
           ))
         }
       </div>
       {
         open && <AddressPopup open={open} setOpen={setOpen} />
+      }
+      {
+        openEdit && index !== null && <AddressPopup open={openEdit} setOpen={setOpenEdit} defaultValue={data[index]}/>
       }
     </div>
   )

@@ -1,5 +1,5 @@
 import { QueryClient, useMutation, useQuery, useQueryClient } from "@tanstack/react-query"
-import { addAddress, getAllAddress, login, register, updateUser } from "../api/user"
+import { addAddress, deleteAddress, editAddress, getAllAddress, login, register, updateUser } from "../api/user"
 import type { AddressT, UserLoginDataT } from "../types/User"
 import type { AxiosResponse } from "axios"
 import toast from "react-hot-toast"
@@ -50,6 +50,36 @@ export const useAddAddress = ()=>{
   return useMutation({
     mutationFn:addAddress,
     onSuccess:(data:AxiosResponse<AddressT> | undefined)=>{
+      if(data){
+        toast.success("Hemme zat gul yaly!")
+        queryClient.invalidateQueries({ queryKey: ['addresses'] })
+      }
+    },
+    onError:()=>{
+      alert("Hello yalnyshlyk")
+    }
+  })
+}
+export const useEditAddress = ()=>{
+  const queryClient = useQueryClient()
+  return useMutation({
+    mutationFn:editAddress,
+    onSuccess:(data:AxiosResponse<AddressT> | undefined)=>{
+      if(data){
+        toast.success("Hemme zat gul yaly!")
+        queryClient.invalidateQueries({ queryKey: ['addresses'] })
+      }
+    },
+    onError:()=>{
+      alert("Hello yalnyshlyk")
+    }
+  })
+}
+export const useDeleteAddress = ()=>{
+  const queryClient = useQueryClient()
+  return useMutation({
+    mutationFn:deleteAddress,
+    onSuccess:(data:AxiosResponse | undefined)=>{
       if(data){
         toast.success("Hemme zat gul yaly!")
         queryClient.invalidateQueries({ queryKey: ['addresses'] })

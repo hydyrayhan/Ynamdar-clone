@@ -1,13 +1,17 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import type { InputProp } from '../../types/Header'
 import { BsEye, BsEyeSlash } from 'react-icons/bs'
 import { useTranslation } from 'react-i18next'
 
 function Input(props: InputProp) {
-  const [focus, setFocus] = useState(props.defaultValue || props.value || props.type==="date" ? true : false)
+  const [focus, setFocus] = useState(false)
   const [validate, setValidate] = useState(true)
   const [visible, setVisible] = useState(false)
   const {t} = useTranslation()
+
+  useEffect(()=>{
+    setFocus(props.defaultValue || props.value || props.type==="date" ? true : false)
+  },[props])
 
   const checkValidate = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (props.regex) setValidate(props.regex.test(e.target.value))
